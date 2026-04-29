@@ -21,7 +21,13 @@ When the user describes a game to build, before writing any code:
    git add .
    git commit -m "init: <short game description>"
    ```
-6. **Push to GitHub** immediately after the initial commit — create a public repo named `<slug>` and push:
+6. **Create a README.md** in the game directory with the live surge URL:
+   ```markdown
+   # <Game Name>
+   <one line description>
+   **Live:** https://<slug>.surge.sh
+   ```
+7. **Push to GitHub** immediately after the initial commit — create a public repo named `<slug>` and push:
    ```bash
    gh repo create <slug> --public --description "<short description>" --source . --remote origin --push
    ```
