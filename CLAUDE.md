@@ -21,7 +21,12 @@ When the user describes a game to build, before writing any code:
    git add .
    git commit -m "init: <short game description>"
    ```
-6. **Deploy to surge.sh** immediately after the initial commit (no local server needed):
+6. **Push to GitHub** immediately after the initial commit — create a public repo named `<slug>` and push:
+   ```bash
+   gh repo create <slug> --public --description "<short description>" --source . --remote origin --push
+   ```
+   - `gh` CLI is installed and authenticated as `mahfujarrahman` — no confirmation needed
+7. **Deploy to surge.sh** immediately after the initial commit (no local server needed):
    ```bash
    npx surge . <slug>.surge.sh
    ```
@@ -29,13 +34,23 @@ When the user describes a game to build, before writing any code:
    - The domain follows the pattern `<slug>.surge.sh` (e.g. `palette-thief-game.surge.sh`)
    - After deploy, share the live URL with the user
 
+## Autonomy
+
+**Do not ask for permission** for any of these standard operations — just do them:
+- Creating directories, files, git repos
+- Committing changes
+- Creating GitHub repos and pushing (`gh` authenticated as `mahfujarrahman`)
+- Deploying to surge.sh (authenticated as `mahfujar.rahman@lobstr.io`)
+- Redeploying after changes
+
+Only pause if something is genuinely ambiguous about what the user wants built.
+
 ## Redeploying
 
 To redeploy after changes, run from inside the game directory:
 ```bash
 npx surge . <slug>.surge.sh
 ```
-No confirmation needed — just run it.
 
 ## Platform notes
 
