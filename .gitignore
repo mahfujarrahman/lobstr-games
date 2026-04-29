@@ -1,0 +1,2 @@
+# Ignore all game subdirectories (each has its own git repo)
+*/
